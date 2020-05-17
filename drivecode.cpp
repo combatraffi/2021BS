@@ -1,4 +1,5 @@
 2021 Robotics Drive PseudoCode
+// open loop drive control for a tank drive Robot
 
 int curLR
 int curUD
@@ -30,7 +31,7 @@ case 3: ball camera input commands  //left stick controls throttle position || L
 
 
 //value chopping -----------------------------
-if leftThrottleCommand >=upperThrottleLimit)
+if leftThrottleCommand >upperThrottleLimit)
 {
     leftThrottleCommand = upperThrottleLimit
 }
@@ -38,7 +39,7 @@ elif leftThrottleCommand<lowerThrottleLimit)
 {
     leftThrottleCommand = lowerThrottleLimit
 }
-if rightThrottleCommand >=upperThrottleLimit)
+if rightThrottleCommand >upperThrottleLimit)
 {
     rightThrottleCommand = upperThrottleLimit
 }
