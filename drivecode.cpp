@@ -13,6 +13,9 @@ get leftstick
 get rightstick
 int upperThrottleLimit = 100;
 int lowerThrottleLimit = 100;
+int leftThrottleCommand = 0;
+int rightThrottleCommand = 0;
+
 //GETCOMMANDS SEC --------------------------------------
 get overall command mode from master loop
 
@@ -22,23 +25,31 @@ case 3: ball camera input commands  //left stick controls throttle position || L
 
 
 
-control function -----------------------------
+//control function -----------------------------
 37X^2*logX
 
 
-value chopping -----------------------------
-if throttlecommand >=upperThrottleLimit)
+//value chopping -----------------------------
+if leftThrottleCommand >=upperThrottleLimit)
 {
-    throttlecommand = upperThrottleLimit
+    leftThrottleCommand = upperThrottleLimit
 }
-elif throttlecommand<lowerThrottleLimit)
+elif leftThrottleCommand<lowerThrottleLimit)
 {
-    throttlecommand = lowerThrottleLimit
+    leftThrottleCommand = lowerThrottleLimit
+}
+if rightThrottleCommand >=upperThrottleLimit)
+{
+    rightThrottleCommand = upperThrottleLimit
+}
+elif rightThrottleCommand<lowerThrottleLimit)
+{
+    rightThrottleCommand = lowerThrottleLimit
 }
 
-modifiers -----------------------------------
+//modifiers -----------------------------------
 
-SLEWLIMITING ------------------------------
+//SLEWLIMITING ------------------------------
 if deltaLR >=slewLim)
 {
     throttlecommand = upperThrottleLimit
